@@ -1,0 +1,37 @@
+{% extends 'main/layout.html' %}
+{% load static %}
+
+{% block content %}
+<main class="profile row">
+        <div class="profile-content col-12 col-sm-12 col-md-6 col-lg-6">
+            <div class="profile-greeting">
+                <h2>Добро пожаловать, {{ user.name }}!</h2>
+                <p>Контактные данные: {{ user.phone_number }}</p>
+            </div>
+            <div class="additional-block">
+                <h4>Ваши записи:</h4>
+                <div class="records-list">
+                    {% for record in user_records %}
+                        <hr>
+                        <div class="record">
+                            <p><b>{{ record.service.name }}</b> - {{ record.price }} рублей</p>
+                            <p class="date-time"> {{ record.date }} {{ record.time }}</p>
+                        </div>
+                    {% empty %}
+                        <p>У вас нет активных записей в BEAUTY SPACE STUDIO.</p>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        <div class="profile-sidebar col-12 col-sm-12 col-md-6 col-lg-6">
+            <h1>Фото профиля</h1>
+            <div class="profile-block-sidebar">
+                <ul>
+                    <li><a href="{% url 'profile_info' %}">Редактировать профиль</a></li>
+                    <li><a href="{% url 'records_free' %}">Свободные окна для записи</a></li>
+                    <li><a href="{% url 'home' %}">Выйти из аккаунта</a></li>
+                </ul>
+            </div>
+        </div>
+</main>
+{% endblock %}

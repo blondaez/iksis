@@ -1,0 +1,795 @@
+@charset "UTF-8";
+header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 2px rgba(0, 0, 0, 0.1);
+}
+header .header-left {
+  display: flex;
+  align-items: center;
+}
+header .header-left .social-icons a {
+  color: #000;
+  text-decoration: none;
+}
+header .logo {
+  font-size: 24px;
+  font-weight: bold;
+  margin-right: 20px;
+}
+header .logo a {
+  text-decoration: none;
+  color: #000;
+}
+header .header-right {
+  display: flex;
+  align-items: center;
+}
+header .contact-info {
+  display: flex;
+  flex-direction: column;
+  margin-right: 20px;
+}
+header .contact-info span {
+  margin-bottom: 5px;
+}
+header .buttons {
+  display: flex;
+  align-items: center;
+}
+header .buttons a {
+  text-decoration: none;
+  color: #fff;
+}
+header .book-button {
+  background-color: black;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+}
+
+nav {
+  width: 100%;
+  background-color: #f9f9f9;
+  padding: 10px 20px;
+}
+
+nav ul {
+  list-style-type: none;
+  display: flex;
+  justify-content: space-around;
+  padding: 0;
+  margin: 0;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: black;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+main {
+  text-align: center;
+  max-width: 1200px;
+}
+main h1 {
+  margin-bottom: 26px;
+}
+
+blog {
+  display: flex;
+}
+blog sidebar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+}
+blog block-sidebar {
+  border-radius: 35px;
+  width: 300px;
+  background-color: #fff;
+  padding: 20px;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  margin-bottom: 16px;
+}
+blog block-sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0px;
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+blog block-sidebar ul li {
+  margin: 0;
+  margin-bottom: 14px;
+}
+blog block-sidebar ul li a {
+  text-decoration: none;
+  color: #333;
+  font-size: 16px;
+}
+blog .content {
+  flex: 1;
+  padding-left: 20px;
+}
+blog .greeting {
+  background-color: #fff;
+  padding: 20px;
+  align-items: left;
+}
+blog .sidebar {
+  width: 25%;
+  padding: 20px;
+  border-right: 1px solid #e0e0e0;
+}
+
+.profile {
+  display: flex;
+  flex-direction: row;
+}
+.profile body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  min-height: 100vh;
+}
+.profile main {
+  display: flex;
+  flex-direction: row;
+}
+.profile .profile-sidebar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+}
+.profile .profile-sidebar h3 {
+  text-align: left;
+}
+.profile .profile-block-sidebar {
+  width: 300px;
+  background-color: #fff;
+  margin-bottom: 16px;
+}
+.profile .profile-block-sidebar ul {
+  list-style: none;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+}
+.profile .profile-block-sidebar ul li {
+  width: 250px;
+  height: 50px;
+  margin-bottom: 14px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.profile .profile-block-sidebar ul li a {
+  text-decoration: none;
+  color: #333;
+  font-size: 16px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.profile .profile-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+@media screen and (max-width: 768px) {
+  .profile main {
+    flex-direction: column;
+  }
+  .profile .profile-sidebar {
+    order: 2; /* изменение порядка на маленьких экранах */
+  }
+  .profile .profile-content {
+    order: 1; /* изменение порядка на маленьких экранах */
+  }
+}
+.profile .profile-greeting {
+  background-color: #fff;
+  padding: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  margin-bottom: 16px;
+}
+.profile .profile-additional-block {
+  background-color: #fff;
+  padding: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+#page {
+  display: flex;
+  flex-direction: column;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.content-row {
+  margin: 30px;
+}
+
+.content-pair {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.content-info,
+.content-image {
+  width: 49%;
+  box-sizing: border-box;
+}
+
+.content-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.content-info p {
+  text-align: left;
+}
+
+.content-image img {
+  height: 30rem;
+  border-radius: 100%;
+}
+@media (max-width: 576px) {
+  .content-image img {
+    height: 15rem;
+  }
+}
+@media (max-width: 576px) {
+  .content-image img p {
+    font-size: 1rem;
+  }
+}
+
+div.content-image:hover img {
+  opacity: 0.8;
+}
+
+form {
+  padding: 20px;
+  width: 100%;
+  max-width: 400px;
+}
+form h2 {
+  margin-bottom: 20px;
+  font-size: 24px;
+  color: #333333;
+  text-align: center;
+}
+form p {
+  margin-bottom: 15px;
+}
+form label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #333333;
+}
+form input[type=text],
+form input[type=password],
+form input[type=email],
+form input[type=number],
+form select,
+form textarea {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #dddddd;
+  margin-bottom: 10px;
+  display: block;
+  font-size: 14px;
+}
+form input[type=text]:focus,
+form input[type=password]:focus,
+form input[type=email]:focus,
+form input[type=number]:focus,
+form select:focus,
+form textarea:focus {
+  border-color: #888888;
+  outline: none;
+}
+
+.custom-button-dark {
+  background-color: #333333;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  width: 100%;
+}
+
+.custom-button-dark:hover {
+  background-color: #555555;
+  color: #fff;
+}
+
+.login-form a {
+  display: inline;
+  text-decoration: none;
+  color: #000;
+}
+
+.login-form a:hover {
+  text-decoration: underline;
+}
+
+.card-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.my-card {
+  box-sizing: border-box;
+  padding: 4px;
+  text-align: center;
+  width: 100%;
+}
+.my-card img {
+  width: auto;
+  height: 10rem;
+}
+.my-card h3 {
+  font-size: 18px;
+  margin: 15px 0;
+}
+.my-card p {
+  font-size: 14px;
+  margin: 15px 0;
+  color: #333;
+}
+.my-card a {
+  color: #000;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+@media (max-width: 1200px) {
+  .my-card {
+    width: calc(33.33% - 40px);
+  }
+}
+@media (max-width: 768px) {
+  .my-card {
+    width: calc(50% - 40px);
+  }
+}
+@media (max-width: 480px) {
+  .my-card {
+    width: calc(100% - 40px);
+  }
+}
+.flex-row {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+}
+.flex-row h2 {
+  font-size: 18px;
+}
+
+.flex-container {
+  gap: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+}
+
+.flex-item {
+  border: 1px solid #000;
+  padding: 10px;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.flex-dark-item {
+  border: 1px solid #000;
+  background-color: #000;
+  color: #fff;
+  padding: 10px;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+@media (max-width: 1200px) {
+  .flex-item {
+    flex-basis: calc(25% - 10px); /* Adjust this for different screen sizes */
+  }
+}
+@media (max-width: 768px) {
+  .flex-item {
+    flex-basis: calc(33.33% - 10px); /* Adjust this for different screen sizes */
+  }
+}
+@media (max-width: 480px) {
+  .flex-item {
+    flex-basis: calc(50% - 10px); /* Adjust this for different screen sizes */
+  }
+}
+.accordion-button:not(.collapsed) {
+  background-color: #fff !important;
+  color: #000 !important;
+}
+
+.footer-container {
+  width: 100%;
+  padding: 20px;
+}
+
+.price-service-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.price-service-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.price-service-title {
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+.price-service-duration {
+  font-size: 0.9em;
+  color: gray;
+}
+
+.price-service-description {
+  margin: 10px 0;
+  font-size: 1em;
+  text-align: left;
+}
+
+.price-service-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.price-service-price {
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+.price-service-button {
+  padding: 10px 20px;
+  color: #000;
+  border: 1px solid #000;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.price-service-button:hover {
+  background-color: #000;
+  color: #fff;
+}
+
+.record-container {
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 20px;
+}
+
+.record {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 15px;
+  margin-bottom: 10px;
+}
+
+.record-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.record-info p {
+  margin: 5px 0;
+}
+
+.record-info .date-time {
+  font-size: 14px;
+  color: #666;
+}
+
+.record p {
+  margin: 5px 0;
+}
+
+.record .date-time {
+  font-size: 14px;
+  color: #666;
+}
+
+.record-button {
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  color: #fff;
+  background-color: #000;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.record-button:hover {
+  background-color: #fff;
+  color: #000;
+}
+
+.input-group {
+  padding: 24px;
+  gap: 10px;
+  border-radius: 0px;
+}
+.input-group .form-control,
+.input-group .btn {
+  border-radius: 0 !important;
+}
+
+.btn {
+  padding: 20px 20px;
+  margin: 5px;
+  border: none !important;
+  border-radius: 0px !important;
+  cursor: pointer;
+  width: 100%;
+}
+
+.btn-success {
+  background-color: #000 !important;
+  color: #fff !important;
+}
+
+.btn-danger {
+  border: 1px solid #000 !important;
+  background-color: #fff !important;
+  color: #000 !important;
+}
+
+.btn:hover {
+  opacity: 0.9 !important;
+}
+
+.record-buttons {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  margin: 0px;
+  padding: 0px;
+}
+
+.record-buttons form {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  margin: 6px;
+  padding: 6px;
+}
+
+.record-info {
+  margin: 12px;
+}
+
+/* Основные стили для input группы */
+.input-group {
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+/* Стили для блога */
+.blog-container {
+  margin-top: 20px;
+  max-width: 800px;
+}
+
+.blog-item {
+  display: flex;
+  align-items: center;
+  transition: transform 0.3s;
+  max-width: 800px;
+  margin-bottom: 8px;
+}
+
+.blog-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 20px;
+  text-align: left;
+}
+
+.blog-info h3 {
+  margin: 0 0 10px 0;
+  font-size: 1.25rem;
+}
+
+.blog-info p {
+  margin: 0 0 15px 0;
+  font-size: 1rem;
+  color: #555;
+}
+
+.blog-item img {
+  height: 15rem;
+  width: 12rem;
+}
+
+/* Стили для кнопки */
+.btn-outline-primary {
+  align-self: start;
+  font-size: 1rem;
+  padding: 8px 12px;
+  border: 1px solid #000 !important;
+  color: #000 !important;
+  text-transform: uppercase;
+  transition: background-color 0.2s, color 0.2s;
+  text-decoration: none;
+}
+
+.btn-outline-primary:hover {
+  background-color: #000 !important;
+  color: #fff !important;
+  transform: scale(1.1);
+}
+
+/* Desktop view */
+header.mobile-header,
+#navbarNav {
+  display: none;
+}
+
+/* Mobile view */
+@media (max-width: 768px) {
+  header,
+  nav {
+    display: none;
+  }
+  header.mobile-header {
+    display: block;
+  }
+  #navbarNav {
+    display: none;
+  }
+}
+.menu-toggle {
+  background-color: transparent;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 24px;
+  color: #333;
+}
+
+.menu-toggle:hover {
+  color: #555;
+}
+
+.menu-toggle:focus {
+  outline: none;
+}
+
+/* По умолчанию скрываем элемент */
+#navbarNav {
+  display: none;
+}
+
+/* Когда добавляется класс show, отображаем элемент */
+#navbarNav.show {
+  display: block;
+  text-decoration: none;
+}
+
+.navbar-nav .nav-item .nav-link {
+  text-decoration: none;
+  color: #666;
+}
+
+/* Корректно отображаем и скрываем меню */
+.navbar-collapse {
+  display: none;
+}
+
+.navbar-collapse.show {
+  display: block;
+}
+
+.content {
+  max-width: 1200px;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.greeting {
+  width: 70%;
+  align-content: center;
+}
+
+.greeting h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.greeting img {
+  display: block;
+  max-width: 90%;
+  height: 10rem;
+  object-fit: cover;
+  margin: 1rem auto;
+  aspect-ratio: 16/9;
+}
+
+.greeting p {
+  font-size: 1rem;
+  line-height: 1.6;
+  text-align: justify;
+  margin: 0.5rem 0;
+}
+
+.greeting p strong {
+  font-weight: bold;
+}
+
+.greeting p:last-child {
+  margin-bottom: 0;
+}
+
+@keyframes pulse-animation {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+.pulse {
+  animation: pulse-animation 1s infinite;
+}
+/*# sourceMappingURL=style.css.map */

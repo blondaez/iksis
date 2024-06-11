@@ -1,0 +1,32 @@
+{% extends 'main/layout.html' %}
+{% load static %}
+
+{% block content %}
+<h1>Все активные записи клиентов на сегодня:</h1>
+
+<div class="record-container">
+    {% for record in today_records %}
+    <hr>
+        <div class="record">
+            <div class="record-info">
+                <p><b>{{ record.service.name }}</b> - {{ record.price }} рублей</p>
+                <p class="date-time">{{ record.date }} {{ record.time }}</p>
+                <p>Клиент: {{ record.client_profile.surname }} {{ record.client_profile.name }} {{ record.client_profile.patronymic }} ({{ record.client_profile.user.username }}), телефон для связи {{ record.client_profile.phone_number }}</p>
+            </div>
+            <div class="record-buttons">
+                <form method="post" action="{% url 'complete_record' record.id %}">
+                    {% csrf_token %}
+                    <button type="submit" class="btn btn-success">Завершить</button>
+                </form>
+                <form method="post" action="{% url 'cancel_record' record.id %}">
+                    {% csrf_token %}
+                    <button type="submit" class="btn btn-danger">Отменить</button>
+                </form>
+            </div>
+        </div>
+    {% empty %}
+        <p>Сегодня нет записей.</p>
+    {% endfor %}
+</div>
+
+{% endblock %}

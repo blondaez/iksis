@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BEAUTY SPACE</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <style>
+        .content-row {
+            margin-bottom: 30px;
+        }
+        .my-card {
+            margin-bottom: 20px;
+        }
+        .flex-container {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .flex-item {
+            flex: 1;
+            min-width: 150px;
+            margin: 10px;
+            text-align: center;
+        }
+        .flex-dark-item {
+            flex: 1;
+            min-width: 150px;
+            margin: 10px;
+            text-align: center;
+            background-color: #ccc;
+        }
+        .accordion-button::after {
+            flex-shrink: 0;
+        }
+    </style>
+</head>
+<body>
+    {% extends 'main/layout.html' %}
+    {% load static %}
+    {% block title %}
+        BEAUTY SPACE
+    {% endblock %}
+    {% block content %}
+        <div class="container">
+            <h1>Добро пожаловать в BEAUTY SPACE STUDIO</h1>
+            <div id="page">
+                <div class="row content-row">
+                    <div class="col-12 col-sm-12 col-md-6 content-image">
+                        <img src="{% static 'main/img/photo.jpg' %}" alt="Яночка" class="img-fluid">
+                    </div>
+                    <div class="col-12 col-sm-12 col-md-6 content-info">
+                        <p>Я — Яна Золотова, основатель BSS и доктор-косметолог. Помогаю девушкам и мужчинам
+                            сохранить молодость, переключиться с рабочих будней на отдых и интересное общение, понять, как ухаживать за своей кожей, и получить «то самое» желанное преображение.</p>
+                    </div>
+                </div>
+
+                <h1>ИСТОРИЯ ПРЕОБРАЖЕНИЙ</h1>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12 col-sm-6 col-md-6 col-lg-3 my-card">
+                            <img src="{% static 'main/img/image1.jpg' %}" alt="Лечение акне" class="img-fluid">
+                            <h3>Лечение акне</h3>
+                            <p>Избавили Ксению от акне: фото без макияжа до и после 5 процедур из чистки лица, пилингов и плазмотерапии. Отзыв Ксении в ее истории преображения.</p>
+                        </div>
+                        <div class="col-12 col-sm-6 col-md-6 col-lg-3 my-card">
+                            <img src="{% static 'main/img/image2.jpg' %}" alt="Коррекция губ" class="img-fluid">
+                            <h3>Коррекция губ</h3>
+                            <p>Сделали губы Ольги Мангасарян более выразительными: фото до и после процедуры контурной пластики (школы красоты Juvederm) в ее истории преображения.</p>
+                        </div>
+                        <div class="col-12 col-sm-6 col-md-6 col-lg-3 my-card">
+                            <img src="{% static 'main/img/image3.jpg' %}" alt="Лазерное омоложение лица" class="img-fluid">
+                            <h3>Лазерное омоложение лица</h3>
+                            <p>Омолодили Ирину при помощи лазера Lamis XL: добились эффекта лифтинга кожи и разглаживания морщин. Фото до и после 5 сеансов лазерного омоложения в ее истории преображения.</p>
+                        </div>
+                        <div class="col-12 col-sm-6 col-md-6 col-lg-3 my-card">
+                            <img src="{% static 'main/img/image4.jpg' %}" alt="Коррекция асимметрии бровей" class="img-fluid">
+                            <h3>Коррекция асимметрии бровей</h3>
+                            <p>Поправили асимметрию бровей бьюти-обозревателю Евгении Благовестниковой: фото до и после двух процедур диспорта. Отзыв Евгении в ее истории преображения.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <h1>К НАМ ОБРАЩАЮТСЯ С ЗАПРОСАМИ</h1>
+                <section class="flex-row">
+                    <div class="flex-container">
+                        <div class="flex-dark-item">ИЗБАВИТЬСЯ ОТ</div>
+                        <div class="flex-item">ПРЫЩЕЙ</div>
+                        <div class="flex-item">МОРЩИН</div>
+                        <div class="flex-item">ЦЕЛЛЮЛИТА</div>
+                        <div class="flex-item">АКНЕ</div>
+                        <div class="flex-item">НЕСОВЕРШЕНСТВ</div>
+                    </div>
+                </section>
+                <section class="flex-row">
+                    <div class="flex-container">
+                        <div class="flex-dark-item">ИЗМЕНИТЬ</div>
+                        <div class="flex-item">ГУБЫ</div>
+                        <div class="flex-item">НОС</div>
+                        <div class="flex-item">ФИГУРУ</div>
+                        <div class="flex-item">КОНТУРЫ ЛИЦА</div>
+                        <div class="flex-item">ФОРМУ ГЛАЗ</div>
+                    </div>
+                </section>
+                <section class="flex-row">
+                    <div class="flex-container">
+                        <div class="flex-dark-item">ЗАПИСАТЬСЯ НА</div>
+                        <div class="flex-item">КОНСУЛЬТАЦИЮ</div>
+                        <div class="flex-item">ЧИСТКУ ЛИЦА</div>
+                        <div class="flex-item">ПИЛИНГ</div>
+                        <div class="flex-item">ПОДТЯЖКУ</div>
+                        <div class="flex-item">SMAS</div>
+                    </div>
+                </section>
+
+                <h1>ВАШИ ВОПРОСЫ</h1>
+                <div class="accordion" id="accordionExample">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingOne">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                Косметолог — настоящий врач?
+                            </button>
+                        </h2>
+                        <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                Конечно. У всех косметологов BEAUTY SPACE — высшее медицинское образование, а также множество сертификатов о повышении квалификации. Вся наша команда регулярно проходит обучения, осваивает актуальные технологии и внедряет лучшие в свою работу.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingTwo">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                Увеличение губ всегда смотрится неестественно?
+                            </button>
+                        </h2>
+                        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                Конечно, нет! Всё зависит от объема введенного филлера. Специалист учтет все ваши пожелания и подберет подходящий именно вам препарат и объем.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingThree">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                Можно ли посещать косметолога во время беременности?
+                            </button>
+                        </h2>
+                        <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                Конечно! Многие процедуры безопасно делать даже во время беременности: например, поверхностные пилинги, процедуры для увлажнения кожи (макси и т.д.), механическую чистку, массаж лица и не только.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endblock %}
+</body>
+</html>

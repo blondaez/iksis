@@ -1,0 +1,13 @@
+{% extends 'main/layout.html' %}
+{% load static %}
+
+{% block content %}
+  <form class="login-form" method="post">
+    {% csrf_token %}
+    <h2>Вход в личный кабинет</h2>
+    {{ form.as_p }}
+    <button type="submit" class="custom-button-dark">Войти</button>
+    <p style="display: inline;">или </p><a href="{% url 'signup' %}" style="color: #4d0f3b; display: inline;">Зарегистрироваться</a>
+  </form>
+{% endblock %}
+

@@ -1,0 +1,16 @@
+{% extends 'main/layout.html' %}
+
+{% block content %}
+    <div class="features">
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <h1>Добавьте новыую статью в блог</h1>
+            {{ form.name }}<br>
+            {{ form.deadline }}<br>
+            {{ form.notes }}<br>
+            {{ form.image }}<br>
+            {{ form.author }}<br>
+            <button class="btn btn-success params-button" type="submit">Опубликовать в блоге</button><br>
+        </form>
+    </div>
+{% endblock %}

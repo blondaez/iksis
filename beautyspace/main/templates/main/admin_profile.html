@@ -1,0 +1,54 @@
+{% extends 'main/layout.html' %}
+{% load static %}
+
+{% block content %}
+<main class="profile row">
+        <div class="profile-content col-12 col-sm-12 col-md-6 col-lg-6">
+            <div class="profile-greeting">
+                <h2>Добро пожаловать, {{ user.username }}!</h2>
+                <p>Это ваш личный кабинет.</p>
+            </div>
+
+            <div class="record-container">
+                <h1>Записи на сегодня:</h1>
+                {% for record in today_records %}
+                <hr>
+                    <div class="record">
+                        <div class="record-info">
+                            <p><b>{{ record.service.name }}</b> - {{ record.price }} рублей</p>
+                            <p class="date-time">{{ record.date }} {{ record.time }}</p>
+                            <p>Клиент: {{ record.client_profile.surname }} {{ record.client_profile.name }} {{ record.client_profile.patronymic }} ({{ record.client_profile.user.username }}), телефон для связи {{ record.client_profile.phone_number }}</p>
+                        </div>
+                        <div class="record-buttons">
+                            <form method="post" action="{% url 'complete_record' record.id %}">
+                                {% csrf_token %}
+                                <button type="submit" class="btn btn-success">Завершить</button>
+                            </form>
+                            <form method="post" action="{% url 'cancel_record' record.id %}">
+                                {% csrf_token %}
+                                <button type="submit" class="btn btn-danger">Отменить</button>
+                            </form>
+                        </div>
+                    </div>
+                {% empty %}
+                    <p>Сегодня нет записей.</p>
+                {% endfor %}
+            </div>
+        </div>
+
+        <div class="profile-sidebar col-12 col-sm-12 col-md-6 col-lg-6">
+            <div class="profile-block-sidebar">
+                <ul>
+                    <li><a href="{% url 'records_today' %}">Записи на сегодня</a></li>
+                    <li><a href="{% url 'records_all' %}">Все записи клиентов</a></li>
+                    <li><a href="{% url 'records_free' %}">Свободные окна</a></li>
+                    <li><a href="{% url 'records_response' %}">Неподтвержденные записи</a></li>
+                    <li><a href="{% url 'record_new' %}">Добавить новую запись</a></li>
+                    <li><a href="{% url 'blog_new' %}">Добавить статью на сайт</a></li>
+                    <li><a href="{% url 'service_new' %}">Добавить новую услугу на сайт</a></li>
+                    <li><a href="{% url 'home' %}">Выйти из аккаунта</a></li>
+                </ul>
+            </div>
+        </div>
+</main>
+{% endblock %}

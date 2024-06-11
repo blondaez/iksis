@@ -1,0 +1,29 @@
+{% extends 'main/layout.html' %}
+{% load static %}
+
+{% block content %}
+<script src="{% static 'main/js/blogAlert.js' %}"></script>
+
+<div class="input-group">
+    <input type="search" id="searchInput" class="form-control rounded col-12 col-sm-8 col-md-8 col-lg-9" placeholder="Поиск по блогу" aria-label="Search" aria-describedby="search-addon" />
+    <button type="button" id="searchButton" class="btn btn-outline-primary col-12 col-sm-4 col-md-4 col-lg-3" data-mdb-ripple-init>Поиск</button>
+</div>
+
+<div class="blog-container">
+    {% for blog in blogs %}
+    <div class="col-12 col-sm-12 col-md-12 col-lg-12 blog-item-wrapper">
+        <div class="blog-item d-flex">
+            {% if blog.image %}
+            <img src="{{ blog.image.url }}" alt="{{ blog.name }}" >
+            {% endif %}
+            <div class="blog-info">
+                <h3>{{ blog.name }}</h3>
+                <p>{{ blog.notes|truncatechars:80 }}</p>
+                <a href="{% url 'blog_detail' blog.id %}" class="btn-outline-primary">Перейти</a>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+{% endblock %}

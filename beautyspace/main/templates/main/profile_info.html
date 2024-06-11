@@ -1,0 +1,11 @@
+{% extends 'main/layout.html' %}
+{% load static %}
+
+{% block content %}
+<form method="post">
+    {% csrf_token %}
+    <h2>Введите свои личные данные:</h2>
+    {{ form.as_p }}
+    <button class="custom-button-dark" type="submit">Сохранить</button>
+</form>
+{% endblock %}

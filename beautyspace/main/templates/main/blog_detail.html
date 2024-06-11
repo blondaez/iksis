@@ -1,0 +1,17 @@
+{% extends 'main/layout.html' %}
+{% load static %}
+
+{% block content %}
+<body class="blog">
+        <div class="content">
+            <div class="greeting">
+                <h2>{{ blog.name }}</h2>
+                <p>Автор: <strong>{{ blog.author }}</strong>, дата публикации: {{ blog.date }}</p>
+                {% if blog.image %}
+                    <img src="{{ blog.image.url }}" alt="{{ blog.name }}">
+                {% endif %}
+                <p>{{ blog.notes }}</p>
+            </div>
+        </div>
+</body>
+{% endblock %}

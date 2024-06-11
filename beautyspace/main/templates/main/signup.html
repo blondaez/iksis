@@ -1,0 +1,20 @@
+{% extends 'main/layout.html' %}
+{% load static %}
+
+{% block content %}
+  {% if messages %}
+    {% for message in messages %}
+      <div class="alert {% if message.tags %}alert-{{ message.tags }}{% endif %}">
+        {{ message }}
+      </div>
+    {% endfor %}
+  {% endif %}
+  <form class="signup-form" method="post">
+    {% csrf_token %}
+    <h2>Регистрация</h2>
+    {{ form.as_p }}
+    <button type="submit" class="custom-button-dark">Зарегистрироваться</button>
+  </form>
+  <script src="{% static 'main/js/formValidation.js' %}"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+{% endblock %}

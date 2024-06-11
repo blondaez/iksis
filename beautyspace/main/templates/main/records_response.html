@@ -1,0 +1,29 @@
+{% extends 'main/layout.html' %}
+{% load static %}
+
+{% block content %}
+<div class="input-group">
+    <input type="search" id="searchInput" class="form-control rounded col-12 col-md-6" placeholder="Поиск по окнам" aria-label="Search" aria-describedby="search-addon" />
+    <input type="text" id="dateInput" class="form-control rounded col-12 col-md-4" placeholder="ДД.ММ.ГГГГ" aria-label="Date" aria-describedby="date-addon" />
+    <button type="button" id="searchButton" class="btn btn-outline-primary col-12 col-md-2" data-mdb-ripple-init>Поиск</button>
+</div>
+
+<h1>Неподтвержденные окна:</h1>
+
+<div class="record-container">
+{% for record in response_records %}
+    <div class="record">
+        <div class="record-info">
+            <p><b>{{ user.userprofile.name }} </b>
+            <p><b>{{ record.service.name }} </b> {{ record.price }} рублей </p>
+            <p class="date-time"> {{ record.date }}, {{ record.time }} </p>
+        </div>
+        <form method="post" action="{% url 'book_response_record' record.id %}">
+            {% csrf_token %}
+            <button type="submit" class="record-button">ПОДТВЕРДИТЬ</button>
+        </form>
+    </div>
+{% endfor %}
+    </div>
+
+{% endblock %}
